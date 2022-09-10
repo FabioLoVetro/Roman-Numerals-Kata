@@ -1,11 +1,12 @@
 using NUnit.Framework;
+using FluentAssertions;
 using System.Collections.Generic;
 using System;
 using RomanNumerals;
 
-namespace RomanNumeralsTests
+namespace RomanNumerals
 {
-    public class Tests
+    public class UnitTest1
     {
         private Converter converter;
 
@@ -33,15 +34,11 @@ namespace RomanNumeralsTests
             converter.transform_roman_numeral_to_number("S").Should().Be(-1);
             converter.transform_roman_numeral_to_number("t").Should().Be(-1);
             converter.transform_roman_numeral_to_number("U").Should().Be(-1);
-            converter.transform_roman_numeral_to_number("v").Should().Be(-1);
             converter.transform_roman_numeral_to_number("W").Should().Be(-1);
             converter.transform_roman_numeral_to_number("y").Should().Be(-1);
             converter.transform_roman_numeral_to_number("Z").Should().Be(-1);
             converter.transform_roman_numeral_to_number("aB").Should().Be(-1);
             converter.transform_roman_numeral_to_number("aBeFg").Should().Be(-1);
-            converter.transform_roman_numeral_to_number(null).Should().Be(-1);
-            converter.transform_roman_numeral_to_number(" ").Should().Be(-1);
-            converter.transform_roman_numeral_to_number(string.Empty).Should().Be(-1);
         }
 
         [Test]
@@ -51,34 +48,33 @@ namespace RomanNumeralsTests
         }
 
         [Test]
-        public void transform_roman_numeral_to_number_should_return_10_for_CXLVI()
+        public void transform_roman_numeral_to_number_should_return_146_for_CXLVI()
         {
             converter.transform_roman_numeral_to_number("CXLVI").Should().Be(146);
         }
 
         [Test]
-        public void transform_roman_numeral_to_number_should_return_10_for_CDXCIV()
+        public void transform_roman_numeral_to_number_should_return_494_for_CDXCIV()
         {
             converter.transform_roman_numeral_to_number("CDXCIV").Should().Be(494);
         }
 
         [Test]
-        public void transform_roman_numeral_to_number_should_return_10_for_MMXVIII()
+        public void transform_roman_numeral_to_number_should_return_2018_for_MMXVIII()
         {
             converter.transform_roman_numeral_to_number("MMXVIII").Should().Be(2018);
         }
 
         [Test]
-        public void transform_roman_numeral_to_number_should_return_10_for_x()
+        public void transform_roman_numeral_to_number_should_return_10_for_x_lower_case()
         {
             converter.transform_roman_numeral_to_number("x").Should().Be(10);
         }
 
         [Test]
-        public void transform_roman_numeral_to_number_should_return_10_for_cdxciv()
+        public void transform_roman_numeral_to_number_should_return_494_for_cdxciv_lower_case()
         {
             converter.transform_roman_numeral_to_number("cdxciv").Should().Be(494);
         }
     }
-}
 }
