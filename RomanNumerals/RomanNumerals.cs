@@ -32,8 +32,16 @@ namespace RomanNumerals
             Console.WriteLine("First of all, what do you want do?");
             Console.WriteLine("Press 1 if you want convert a Roman Numeral to Number");
             Console.WriteLine("Press 2 if you want convert a Number to Roman Numeral");
+            string stringCheck = Console.ReadLine();
+            if (stringCheck.All(char.IsDigit))
+            {
+                this.choice = int.Parse(stringCheck);
+            }
+            else
+            {
+                this.choice = 0;
+            }
 
-            this.choice = int.Parse(Console.ReadLine());
             if (choice == 1)
             {
 
