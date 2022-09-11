@@ -19,12 +19,12 @@ namespace RomanNumerals
         [Test]
         public void transform_roman_numeral_to_number_should_return_minus_one_for_invalid_numbers()
         {
-            converter.transform_number_to_roman_numeral("a123").Should().Be("Is not possible converte [a123] in Roman Numeral");
-            converter.transform_number_to_roman_numeral("123B").Should().Be("Is not possible converte [123B] in Roman Numeral");
-            converter.transform_number_to_roman_numeral("1e2").Should().Be("Is not possible converte [1e2] in Roman Numeral");
-            converter.transform_number_to_roman_numeral("123@").Should().Be("Is not possible converte [123@] in Roman Numeral");
-            converter.transform_number_to_roman_numeral("#").Should().Be("Is not possible converte [#] in Roman Numeral");
-            converter.transform_number_to_roman_numeral("@@@").Should().Be("Is not possible converte [@@@] in Roman Numeral");
+            converter.transform_number_to_roman_numeral("a123").Should().Be("-1");
+            converter.transform_number_to_roman_numeral("123B").Should().Be("-1");
+            converter.transform_number_to_roman_numeral("1e2").Should().Be("-1");
+            converter.transform_number_to_roman_numeral("123@").Should().Be("-1");
+            converter.transform_number_to_roman_numeral("#").Should().Be("-1");
+            converter.transform_number_to_roman_numeral("@@@").Should().Be("-1");
         }
 
         [Test]
@@ -82,9 +82,9 @@ namespace RomanNumerals
         }
 
         [Test]
-        public void transform_number_to_roman_numeral_should_return_XMIV_for_994()
+        public void transform_number_to_roman_numeral_should_return_CMXCIV_for_994()
         {
-            converter.transform_number_to_roman_numeral("994").Should().Be("XMIV");
+            converter.transform_number_to_roman_numeral("994").Should().Be("CMXCIV");
         }
     }
 }

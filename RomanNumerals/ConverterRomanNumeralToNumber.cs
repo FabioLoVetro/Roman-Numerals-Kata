@@ -52,7 +52,7 @@ namespace RomanNumerals
             romanNumerals = romanNumerals.ToUpper();
             int res = 0;
             // check
-            if (this.isRomanNumeral(romanNumerals)) return -1;
+            if (!this.isRomanNumeral(romanNumerals)) return -1;
 
             if (romanNumerals.Length == 1)
             {

@@ -45,27 +45,96 @@ namespace RomanNumerals
             String result = "";
 
             //if is not a number return a string
-            if (this.isIntString(number)) return "-1";
+            if (!this.isIntString(number)) return "-1";
             int numberCount = int.Parse(number);
+            Console.WriteLine("numberCount " + numberCount);
+            Console.WriteLine("result " + result);
             //
             while (numberCount>0)
             {
-                if (numberCount >= 1000) result.Concat("M");
-                numberCount = numberCount - 1000;
-                if (numberCount >= 500 && numberCount<1000) result.Concat("D");
-                numberCount = numberCount - 500;
-                if (numberCount >= 100 && numberCount < 500) result.Concat("C");
-                numberCount = numberCount - 100;
-                if (numberCount >= 50 && numberCount < 100) result.Concat("L");
-                numberCount = numberCount - 50;
-                if (numberCount >= 10 && numberCount < 50) result.Concat("X");
-                numberCount = numberCount - 10;
-                if (numberCount >= 5 && numberCount < 10) result.Concat("V");
-                numberCount = numberCount - 5;
-                if (numberCount >= 1 && numberCount < 5) result.Concat("I");
-                numberCount = numberCount - 1;
+                //=>1000
+                if (numberCount >= 1000)
+                {
+                    result += "M";
+                    numberCount = numberCount - 1000;
+                }
+                //900-999
+                if (numberCount >= 900 && numberCount < 1000)
+                {
+                    result += "CM";
+                    numberCount = numberCount - 900;
+                }
+                //500-899
+                if (numberCount >= 500 && numberCount < 900)
+                {
+                    result += "D";
+                    numberCount = numberCount - 500;
+                }
+                //400-499
+                if (numberCount >= 400 && numberCount < 500)
+                {
+                    result += "CD";
+                    numberCount = numberCount - 400;
+                }
+                //100-399
+                if (numberCount >= 100 && numberCount < 400)
+                {
+                    result += "C";
+                    numberCount = numberCount - 100;
+                }
+                //90-99
+                if (numberCount >= 90 && numberCount < 100)
+                {
+                    result += "XC";
+                    numberCount = numberCount - 90;
+                }
+                //50-89
+                if (numberCount >= 50 && numberCount < 90)
+                {
+                    result += "L";
+                    numberCount = numberCount - 50;
+                }
+                //40-49
+                if (numberCount >= 40 && numberCount < 50)
+                {
+                    result += "XL";
+                    numberCount = numberCount - 40;
+                }
+                //10-39
+                if (numberCount >= 10 && numberCount < 40)
+                {
+                    result += "X";
+                    numberCount = numberCount - 10;
+                }
+                //9
+                if (numberCount == 9)
+                {
+                    result += "IX";
+                    numberCount = numberCount - 9;
+                }
+                //5-8
+                if (numberCount >= 5 && numberCount < 9)
+                {
+                    result += "V";
+                    numberCount = numberCount - 5;
+                }
+                //4
+                if (numberCount == 4)
+                {
+                    result += "IV";
+                    numberCount = numberCount - 4;
+                }
+                //1-3
+                if (numberCount >= 1 && numberCount < 4)
+                {
+                    result+="I";
+                    numberCount = numberCount - 1;
+                }
+                Console.WriteLine("numberCount " + numberCount);
+                Console.WriteLine("result " + result);
             }
-
+            Console.WriteLine("numberCount " + numberCount);
+            Console.WriteLine("result " + result);
             return result;
         }
     }

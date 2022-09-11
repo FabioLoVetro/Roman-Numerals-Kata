@@ -55,32 +55,33 @@ namespace RomanNumerals
                 {
                     Console.WriteLine("The roman numerals " + romanNumerals + " is equal to " + numero);
                 }
-            }
-            if (choice == 2)
+            } else
             {
-                Console.WriteLine("Insert the Number to convert");
-                //read the input
-                string number = Console.ReadLine().ToUpper();
-
-                //convert the roman numeral
-                string romanNumeric = CNTRN.transform_number_to_roman_numeral(number);
-                //clear the video
-                Console.Clear();
-                //print to video a message with the result
-                if (romanNumeric == "-1")
+                if (choice == 2)
                 {
-                    Console.WriteLine("This is not a number [" + number + "]");
+                    Console.WriteLine("Insert the Number to convert");
+                    //read the input
+                    string number = Console.ReadLine().ToUpper();
+
+                    //convert the roman numeral
+                    string romanNumeric = CNTRN.transform_number_to_roman_numeral(number);
+                    //clear the video
+                    //Console.Clear();
+                    //print to video a message with the result
+                    if (romanNumeric == "-1")
+                    {
+                        Console.WriteLine("This is not a number [" + number + "]");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The number " + number + " is equal to " + romanNumeric);
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("The number " + number + " is equal to " + romanNumeric);
+                    Console.WriteLine("Your choise is not valid!");
                 }
             }
-            else
-            {
-                Console.WriteLine("Your choise is not valid!");
-            }
-            
         }
     }
 }
