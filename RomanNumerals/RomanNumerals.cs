@@ -27,7 +27,7 @@ namespace RomanNumerals
             //read the input
             romanNumerals = Console.ReadLine().ToUpper();
             //convert the roman numeral
-            Converter converter = new Converter();
+            ConverterRomanNumeralToNumber converter = new ConverterRomanNumeralToNumber();
             numero = converter.transform_roman_numeral_to_number(romanNumerals);
             //clear the video
             Console.Clear();

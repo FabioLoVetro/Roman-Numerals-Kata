@@ -10,7 +10,7 @@ namespace RomanNumerals
     /// Class <c>Converter</c>
     /// manage the convertion from roman numerals to numeric.
     /// </summary>
-    public class Converter
+    public class ConverterRomanNumeralToNumber
     {
         /// <summary>
         /// Method <c>transform_roman_numeral_to_number</c>

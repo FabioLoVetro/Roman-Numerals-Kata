@@ -6,14 +6,14 @@ using RomanNumerals;
 
 namespace RomanNumerals
 {
-    public class UnitTest1
+    public class ConverterRomanNumeralToNumberTest
     {
-        private Converter converter;
+        private ConverterRomanNumeralToNumber converter;
 
         [SetUp]
         public void Setup()
         {
-            converter = new Converter();
+            converter = new ConverterRomanNumeralToNumber();
         }
 
         [Test]
