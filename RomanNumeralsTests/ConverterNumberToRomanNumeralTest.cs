@@ -34,9 +34,21 @@ namespace RomanNumerals
         }
 
         [Test]
+        public void transform_number_to_roman_numeral_should_return_IV_for_4()
+        {
+            converter.transform_number_to_roman_numeral("4").Should().Be("IV");
+        }
+
+        [Test]
         public void transform_number_to_roman_numeral_should_return_V_for_5()
         {
             converter.transform_number_to_roman_numeral("5").Should().Be("V");
+        }
+
+        [Test]
+        public void transform_number_to_roman_numeral_should_return_IX_for_9()
+        {
+            converter.transform_number_to_roman_numeral("9").Should().Be("IX");
         }
 
         [Test]
@@ -85,6 +97,12 @@ namespace RomanNumerals
         public void transform_number_to_roman_numeral_should_return_CMXCIV_for_994()
         {
             converter.transform_number_to_roman_numeral("994").Should().Be("CMXCIV");
+        }
+
+        [Test]
+        public void transform_number_to_roman_numeral_should_return_DCCXLIV_for_744()
+        {
+            converter.transform_number_to_roman_numeral("744").Should().Be("DCCXLIV");
         }
     }
 }

@@ -47,8 +47,6 @@ namespace RomanNumerals
             //if is not a number return a string
             if (!this.isIntString(number)) return "-1";
             int numberCount = int.Parse(number);
-            Console.WriteLine("numberCount " + numberCount);
-            Console.WriteLine("result " + result);
             //
             while (numberCount>0)
             {
@@ -130,11 +128,7 @@ namespace RomanNumerals
                     result+="I";
                     numberCount = numberCount - 1;
                 }
-                Console.WriteLine("numberCount " + numberCount);
-                Console.WriteLine("result " + result);
             }
-            Console.WriteLine("numberCount " + numberCount);
-            Console.WriteLine("result " + result);
             return result;
         }
     }

@@ -66,7 +66,7 @@ namespace RomanNumerals
                     //convert the roman numeral
                     string romanNumeric = CNTRN.transform_number_to_roman_numeral(number);
                     //clear the video
-                    //Console.Clear();
+                    Console.Clear();
                     //print to video a message with the result
                     if (romanNumeric == "-1")
                     {
